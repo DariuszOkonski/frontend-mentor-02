@@ -25,7 +25,7 @@ body {
     font-family: $primary-font-family;
     font-size: $primary-font-size;
     padding: 10px;
-    background-color: $neutral-very-dark-blue;
+    background-color: darken($neutral-very-dark-blue, 10);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -37,18 +37,21 @@ body {
 
 .container {
     width: 100%;
-    max-width: $tablet-width;
-    background-color: $neutral-dark-blue;
+    max-width: $mobile-width;
+    background: linear-gradient($neutral-dark-blue, $neutral-very-dark-blue);
     margin: 10px;
     border-radius: 10px;
-    padding: 25px 15px;
+    padding: 25px 20px;
 }
 
 .star {
-    display: inline-block;
-    padding: 10px;
+    width: 45px;
+    padding: 15px;
     border-radius: 50%;
-    background-color: $neutral-very-dark-blue;
+    background-color: darken($neutral-dark-blue, 5);
+    display: flex;
+    justify-content: center;
+    align-items: center;    
 }
 
 .header {
@@ -70,12 +73,75 @@ body {
     justify-content: space-between;
     align-items: center;
     .point {
+        width: 45px;
         padding: 15px;
         border-radius: 50%;
         background-color: $neutral-very-dark-blue;
         color: $neutral-medium-gray;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: none;
+        cursor: pointer;
+    }
+    
+    .point:hover {
+        background-color: $neutral-light-gray;
+        color: $neutral-white;
+    }
+    
+    .point.point--click {
+        background-color: $primary-orange;
+        color: $neutral-white;
     }
 }
+
+.submit {
+    margin-top: 10px;
+    width: 100%;
+    border: none;
+    background-color: $primary-orange;
+    color: $neutral-white;
+    text-transform: uppercase;
+    padding: 15px;
+    border-radius: 25px;
+    cursor: pointer;
+
+    &:hover {
+        background-color: $neutral-white;
+        color: $primary-orange;
+    }
+}
+
+.phone {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.selected-container {
+    margin: 10px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    .selected {
+        margin: 10px auto;
+        display: inline-block;
+        text-align: center;
+        background-color: darken($neutral-dark-blue, 7);
+        padding: 6px 12px;
+        color: $primary-orange;
+        border-radius: 15px;
+        font-weight: 100;
+    }
+}
+
+.selected-container ~ .header,
+.selected-container ~ .paragraph {
+    text-align: center;
+}
+
 
 .attribution { font-size: 11px; text-align: center; }
 .attribution a { color: hsl(228, 45%, 44%); }
