@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Overpass:wght@100;400;700&display=swap');
-$mobile: 375px;
-$desktop: 1440px;
+$mobile-width: 375px;
+$tablet-width: 720px;
+$desktop-width: 1440px;
 
 $primary-orange: hsl(25, 97%, 53%);
 $neutral-white: hsl(0, 0%, 100%);
@@ -11,3 +12,70 @@ $neutral-very-dark-blue: hsl(216, 12%, 8%);
 
 $primary-font-size: 15px;
 $primary-font-family: 'Overpass', sans-serif;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    font-family: $primary-font-family;
+    font-size: $primary-font-size;
+    padding: 10px;
+    background-color: $neutral-very-dark-blue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hide {
+    display: none;
+}
+
+.container {
+    width: 100%;
+    max-width: $tablet-width;
+    background-color: $neutral-dark-blue;
+    margin: 10px;
+    border-radius: 10px;
+    padding: 25px 15px;
+}
+
+.star {
+    display: inline-block;
+    padding: 10px;
+    border-radius: 50%;
+    background-color: $neutral-very-dark-blue;
+}
+
+.header {
+    color: $neutral-white;
+    font-size: 2rem;
+    font-weight: 100;
+    margin: 15px 0;
+}
+
+.paragraph {
+    font-size: 1.2rem;
+    color: $neutral-medium-gray;
+    line-height: 1.4;
+}
+
+.points-container {
+    margin: 15px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .point {
+        padding: 15px;
+        border-radius: 50%;
+        background-color: $neutral-very-dark-blue;
+        color: $neutral-medium-gray;
+    }
+}
+
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
